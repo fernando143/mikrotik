@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const SERVICE_ACCOUNT = require('/mikrotik-7a9ff.json');
+// const SERVICE_ACCOUNT = require('/mikrotik-7a9ff.json');
 const RouterOSClient = require('routeros-client').RouterOSClient
 
 admin.initializeApp({
@@ -70,7 +70,7 @@ const filterObject = (data, nameFilters) => {
 
 const sendData = (nameCollection, nameDoc, dataToSend) => {
     let addDoc = db.collection(nameCollection);
-    
+
     dataToSend.forEach(data => {
         addDoc.add(data)
         .then(ref => {
